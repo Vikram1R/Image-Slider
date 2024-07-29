@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://127.0.0.1:5500/Image%20Slider/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Image Slider_files/style.css">
+    <title>Image Slider </title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="images">
+            <img src="./Image Slider_files/image-1.jpg" class="active" style="display: block;">
+            <img src="./Image Slider_files/image-2.png" style="display: none;">
+            <img src="./Image Slider_files/image-2.jpg" style="display: none;">
+            <img src="./Image Slider_files/image-4.jpeg" style="display: none;">
+        </div>
+        <div class="dots">
+            <button onclick="dot(1)" style="background-color: rgb(0, 0, 0);"></button>
+            <button onclick="dot(2)" style="background-color: transparent;"></button>
+            <button onclick="dot(3)" style="background-color: transparent;"></button>
+            <button onclick="dot(4)" style="background-color: transparent;"></button>
+        </div>
+        <button id="prev" onclick="prev()"> &lt; </button>
+        <button id="next" onclick="next()"> &gt; </button>
+    </div>
+
+
+    <script src="./Image Slider_files/script.js.download"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
